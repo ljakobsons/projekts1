@@ -1,6 +1,5 @@
 from math import sqrt
 
-
 def calcDistBetweenPoints(point1_y, point1_x, point2_y, point2_x) -> float:
 
     if point1_x > point2_x:
