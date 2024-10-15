@@ -2,7 +2,6 @@ sides = input("> ").split(" ")
 requestedIndents = input("> ").split(" ")
 
 requestedIndents = [int(i) for i in requestedIndents]
-requestedIndents.sort(reverse=False)
 
 sides = [int(i) for i in sides]
 
