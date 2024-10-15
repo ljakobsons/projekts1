@@ -1,12 +1,27 @@
 sides = input("> ").split(" ")
-vertexes = len(sides)
+requestedIndents = input("> ").split(" ")
+
+requestedIndents = [int(i) for i in requestedIndents]
+requestedIndents.sort(reverse=False)
 
 sides = [int(i) for i in sides]
 
 currentIndent = 0
-for i in range(vertexes):
-    currentIndent += sides[i]
-    if currentIndent % 10 == 0:
-        print(f"Vertex {i}({sides[i]}) landed on {currentIndent//10}")
+currentSide = 0
+distanceCovered = 0
+while True:
+    if requestedIndents[0] == distanceCovered:
+        print(f"Marking {requestedIndents[0]} is on vertex {currentSide+1}")
+        requestedIndents.pop(0)
+    elif distanceCovered + sides[currentSide] > requestedIndents[0]:
+        print(f"Marking {requestedIndents[0]} is between vertex {currentSide+1} and {currentSide+2}")
+        requestedIndents.pop(0)
     else:
-        print(f"Vertex {i}({sides[i]}) landed between {currentIndent//10} and {currentIndent//10 + 1}")
+        currentSide += 1
+        if currentSide >= len(sides):
+            currentSide = 0
+
+        distanceCovered += sides[currentSide]
+
+    if len(requestedIndents) == 0:
+        break
