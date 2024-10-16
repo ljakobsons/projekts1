@@ -13,7 +13,14 @@ while True:
         print(f"Marking {requestedIndents[0]} is on vertex {currentSide+1}")
         requestedIndents.pop(0)
     elif distanceCovered + sides[currentSide] > requestedIndents[0]:
-        print(f"Marking {requestedIndents[0]} is between vertex {currentSide+1} and {currentSide+2}")
+        if currentSide >= len(sides) - 1:
+            print(
+                f"Marking {requestedIndents[0]} is between vertex {currentSide+1} and {+1}"
+            )
+        else:
+            print(
+                f"Marking {requestedIndents[0]} is between vertex {currentSide+1} and {currentSide+2}"
+            )
         requestedIndents.pop(0)
     else:
         currentSide += 1
