@@ -1,0 +1,7 @@
+data = open("6_stunda/teksta-faili/dati_3.txt", "rt", encoding="utf-8").read()
+lineCount = len(data.split("\n"))
+wordCount = len(data.split())
+symbolCount = len(data)
+print(f"Failā ir {lineCount} rindiņu/-as.")
+print(f"Failā ir {wordCount} vārdu/-s.")
+print(f"Failā ir {symbolCount} simbolu/-s.")

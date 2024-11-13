@@ -6,4 +6,4 @@ from calcArea import polygonArea
 points = genPointList()
 
 print("Size: ", str(polygonArea(points)))
-drawPolygon(points)
+# drawPolygon(points)

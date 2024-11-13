@@ -1,4 +1,7 @@
-def polygonArea(vertices: list[ list[ float ] ]) -> int:
+def polygonArea(vertices: list[list[float]]) -> int:
+
+    # calculate the area of a polygon using the shoelace formula/method
+    # https://en.wikipedia.org/wiki/Shoelace_formula
     numberOfVertices = len(vertices)
     sum1 = 0
     sum2 = 0
